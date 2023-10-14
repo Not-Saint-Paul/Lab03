@@ -1,8 +1,8 @@
 /************************************
  * Автор: Станковский П.А.          *
  * Дата: 10.10.2023                 *
- * Название: Shitcode Lab3 v1       *
- * https://onlinegdb.com/QZQ9mAPZ1  *
+ * Название: Shitcode Lab3 v2       *
+ * https://onlinegdb.com/oV9VfSR7i  *
  ************************************/
 
 #include <iostream>
@@ -11,34 +11,17 @@ using namespace std;
 
 int main() {
     
-    double C, delta, tau, t = 15, k0, k1, k2, number;
+    double C, delta, tau, t = 15, k0, k1, k2;
+    int number;
+
+    double kei0 [5] = {5.1, 2.7, 5.4, 2.1, -7.7};
+    double kei1 [5] = {6.9, 6.1, -3.8, 3.3, 8.5};
+    double kei2 [5] = {1.2, 4.3, 1.5, 4.3, -1.2};
     
-    for (number = 1; number < 6; ++number) {
-        if (number == 1) {
-            k0 = 5.1;
-            k1 = 6.9;
-            k2 = 1.2;
-        }
-        if (number == 2) {
-            k0 = 2.7;
-            k1 = 6.1;
-            k2 = 4.3;
-        }
-        if (number == 3) {
-            k0 = 5.4;
-            k1 = -3.8;
-            k2 = 1.5;
-        }
-        if (number == 4) {
-            k0 = 2.1;
-            k1 = 3.3;
-            k2 = 4.3;
-        }
-        if (number == 5) {
-            k0 = -7.7;
-            k1 = 8.5;
-            k2 = -1.2;
-        }
+    for (number = 0; number < 5; ++number) {
+        k0 = kei0[number];
+        k1 = kei1[number];
+        k2 = kei2[number];
         
         delta = pow(k1, 2) - 4 * k0 * k2;
         tau = 2 * k2 * t + k1;
